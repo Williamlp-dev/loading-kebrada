@@ -1,95 +1,56 @@
+"use client";
+
 import Image from "next/image";
-import styles from "./page.module.css";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const handleImageClick = () => {
+    window.open("https://wa.me/5581988926308?text=Ol%C3%A1!%20tudo%20bem%3F%20tenho%20interesse%20em%20fazer%20parte%20do%20time%20de%20parceiros%20da%20KEBRADA%20BURGUER!", "_blank");
+  };
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  return (
+   <div className="min-h-screen bg-black relative overflow-hidden">
+      {/* Grid Background */}
+      <div 
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px',
+        }}
+      ></div>
+
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-8">
+        {/* Main Content */}
+        <div className="text-center">
+          <h1 className={"text-3xl md:text-4xl font-extrabold text-gray-50 mb-6 tracking-tight"}>
+            KEBRADA BURGER
+          </h1>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        {/* Clickable Image */}
+        <div 
+          onClick={handleImageClick}
+          className="cursor-pointer transform hover:scale-105 transition-transform duration-200 group"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <div className="bg-neutral-900 p-4 rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-200">
+            <Image
+              src="https://ik.imagekit.io/wl3csniyjx/kebradaburguer.png?updatedAt=1750103542792"
+              alt="Kebrada Burger - Clique para ser parceiro"
+              width={500}
+              height={500}
+              className="rounded-lg"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* Simple instruction */}
+        <p className="text-sm text-gray-50 mt-6 text-center max-w-md">
+          Clique na imagem para fazer parte do time de parceiros
+        </p>
+      </div>
     </div>
   );
 }
