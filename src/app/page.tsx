@@ -8,7 +8,7 @@ export default function Home() {
   };
 
   return (
-   <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="min-h-screen bg-black relative overflow-hidden">
       {/* Grid Background */}
       <div 
         className="absolute inset-0 opacity-20"
@@ -21,35 +21,23 @@ export default function Home() {
         }}
       ></div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-8">
-        {/* Main Content */}
-        <div className="text-center">
-          <h1 className={"text-3xl md:text-4xl font-extrabold text-gray-50 mb-6 tracking-tight"}>
-            KEBRADA BURGER
-          </h1>
-        </div>
-
-        {/* Clickable Image */}
+      <div className="relative z-10 flex items-center justify-center min-h-screen">
+        {/* Large Clickable Image */}
         <div 
           onClick={handleImageClick}
-          className="cursor-pointer transform hover:scale-105 transition-transform duration-200 group"
+          className="cursor-pointer transform hover:scale-105 transition-transform duration-200 group flex items-center justify-center"
         >
-          <div className="bg-neutral-900 p-4 rounded-lg shadow-lg group-hover:shadow-xl transition-shadow duration-200">
+          <div className="relative w-[90vw] h-[80vh] max-w-6xl">
             <Image
               src="https://ik.imagekit.io/wl3csniyjx/kebradaburguer.png?updatedAt=1750103542792"
               alt="Kebrada Burger - Clique para ser parceiro"
-              width={500}
-              height={500}
-              className="rounded-lg"
+              fill
+              className="object-contain group-hover:brightness-110 transition-all duration-300 rounded-lg"
               priority
+              sizes="90vw"
             />
           </div>
         </div>
-
-        {/* Simple instruction */}
-        <p className="text-sm text-gray-50 mt-6 text-center max-w-md">
-          Clique na imagem para fazer parte do time de parceiros
-        </p>
       </div>
     </div>
   );
